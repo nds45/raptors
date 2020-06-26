@@ -50,8 +50,8 @@ class Login extends CI_Controller {
 			$data['password'] = $this->input->cookie('password', true);
 			$this->session->set_flashdata('error','');
 			$this->load->view('header');
-		$this->load->view('login');
-		$this->load->view('footer');
+			$this->load->view('login');
+			$this->load->view('footer');
 			// $this->load->view('login',$data);
 		}
 
