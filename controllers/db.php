@@ -1,10 +1,10 @@
 <?php
 
-function alcholicDrinks(){
+function cocktailsToDB(){
     $curl = curl_init();
 
     curl_setopt_array($curl, array(
-        CURLOPT_URL => "https://the-cocktail-db.p.rapidapi.com/filter.php?a=Alcoholic",
+        CURLOPT_URL => "https://the-cocktail-db.p.rapidapi.com/filter.php?c=Cocktail",
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_FOLLOWLOCATION => true,
         CURLOPT_ENCODING => "",
@@ -24,19 +24,79 @@ function alcholicDrinks(){
     curl_close($curl);
 
     $json = json_decode($response, true);
+    
+    $arr = [];
 
-    // Storing the responses in the correct variable name
-    $drinkId = $json['drinks'][0]['idDrink'];
-    $drinkName = $json['drinks'][0]['strDrink'];
-    // echo $drinkName . $drinkId;
+    for ($count=0; $count < 100; $count++) { 
+        $drinkId = $json['drinks'][$count]['idDrink'];
+        $drinkName = $json['drinks'][$count]['strDrink'];
 
-    /*
-    TO DO
-    For loop for the alcholic and non-alcholic drinks
-    return the drink names along with their corresponding ID
-    Key-value pairs with ID and drink names
-    Store key-value pairs in database so users can search for drinks by the name instad of ID number
-    */
+        $arr[$drinkId] = $drinkName;
+    }
+
+    return $arr;
 }
 
-alcholicDrinks();
+function ordinaryDrinksToDB(){
+    $curl = curl_init();
+
+    curl_setopt_array($curl, array(
+        CURLOPT_URL => "https://the-cocktail-db.p.rapidapi.com/filter.php?c=Ordinary_Drink",
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_FOLLOWLOCATION => true,
+        CURLOPT_ENCODING => "",
+        CURLOPT_MAXREDIRS => 10,
+        CURLOPT_TIMEOUT => 30,
+        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+        CURLOPT_CUSTOMREQUEST => "GET",
+        CURLOPT_HTTPHEADER => array(
+            "x-rapidapi-host: the-cocktail-db.p.rapidapi.com",
+            "x-rapidapi-key: 9a84606931mshdde29538ddf2f5ap15e6f6jsncd0b2c1872ef"
+        ),
+    ));
+
+    $response = curl_exec($curl);
+    $err = curl_error($curl);
+
+    curl_close($curl);
+
+    $json = json_decode($response, true);
+    
+    $arr = [];
+
+    for ($count=0; $count < 100; $count++) { 
+        $drinkId = $json['drinks'][$count]['idDrink'];
+        $drinkName = $json['drinks'][$count]['strDrink'];
+
+        $arr[$drinkId] = $drinkName;
+    }
+
+    return $arr;
+
+}
+
+/*
+TO DO
+Store key-value pairs in database so users can search for drinks by the name instad of ID number
+Only store them if the database is empty
+*/
+function dbConnection(){
+        
+    $hostname = 'http://heaveninfotech.com/phpMyAdmin/db_structure.php?server=1&db=heavenin_suhagiyaparivar';
+    $user = 'heavenin_village';
+    $pass = 'XRWg7dZVYD@3';
+    $dbname = 'heavenin_suhagiyaparivar';
+    
+    $connection = mysqli_connect($hostname, $user, $pass, $dbname);
+    
+    if (!$connection){
+        echo "Error connecting to database: ".$connection->connect_errno.PHP_EOL;
+        exit(1);
+    }
+    echo "Connection established to database".PHP_EOL;
+    return $connection;
+}
+
+// print_r(cocktailsToDB());
+// print_r(ordinaryDrinksToDB());
+dbConnection();
