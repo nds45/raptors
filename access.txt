@@ -1,0 +1,18 @@
+
+http://suhagiyaparivar.heaveninfotech.com/
+***********************************************************************************
+   Data base details
+
+   DB URl :- http://heaveninfotech.com/phpMyAdmin/db_structure.php?server=1&db=heavenin_suhagiyaparivar
+   DB Name :- heavenin_suhagiyaparivar
+   username :- heavenin_village
+   password :- XRWg7dZVYD@3
+   
+*********************************************************************************
+   Ftp Details
+
+   Host name :- ftp.heaveninfotech.com
+   username :-  suhagiyaparivar@heaveninfotech.com
+   password :- $bZN(sYkx$2h	
+
+***********************************************************************************

@@ -1,0 +1,7 @@
+.form-horizontal .box-footer {
+    text-align: center;
+}
+
+#change_pwd_form .box-footer {
+    text-align: left !important;
+}

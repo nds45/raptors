@@ -1,0 +1,35 @@
+﻿@media all and (min-width:481px){.search-box input.search-box-text{width:300px !important;}
+.ui-autocomplete.ui-menu.ui-widget.ui-widget-content{width:336px !important;}
+.eu-cookie-bar-notification{padding:20px 75px;}
+.eu-cookie-bar-notification button,
+.eu-cookie-bar-notification a{margin:0 5px;}
+.footer-upper-block{float:left;}
+.home-page-bottom > *{float:left;margin:0 0 2% 2%;}
+.home-page-banners{padding:14px;}
+.news-list-homepage .news-items .news-item{float:left;margin:0 0 2% 2%;}
+.news-list-homepage .news-items .news-item.one{width:70%;float:none;margin:0 auto !important;}
+.home-page-category-grid .item-box,
+.sub-category-grid .item-box,
+.item-box{float:left;margin:0 0 3% 3%;max-width:none;}
+.attributes{overflow:hidden;text-align:left;}
+.attributes dl{float:left;margin:0 0 0 4%;}
+.attributes dl:nth-child(1){margin-left:0;}
+.attributes dl:only-child{float:none;margin:0 auto;text-align:center;}
+.enter-password-form input[type="password"]{width:300px !important;}
+.cart-collaterals .coupon-code input[type="submit"]{font-size:14px;}
+.order-review-data{display:table;width:100%;margin:0 0 30px;text-align:center;}
+.order-review-data ul{display:table-cell;}
+.order-details-area td{float:none;width:auto;}
+.shipment-details-page .shipment-overview > ul{float:left;width:48%;margin:0 1% !important;}
+.forums-main-page .search-box.forum-search-box-text,
+.forum-search-text{width:300px !important;}
+}
+@media all and (min-width:481px) and (max-width:768px){.footer-upper-block{width:49%;margin:0 0 20px 2%;}
+.footer-upper-block:nth-child(2n+1){clear:both;margin-left:0;}
+.item-box{width:48%;}
+.item-box:nth-child(2n+1){clear:both;margin-left:0;}
+.news-list-homepage .news-items .news-item{width:49%;}
+.news-list-homepage .news-items .news-item:nth-child(2n+1){clear:both;margin-left:0;}
+.home-page-bottom > *{width:49%;}
+.home-page-bottom > *:nth-child(2n+1){clear:both;margin-left:0;}
+}
