@@ -45,6 +45,7 @@ function randomCocktail(){
         }
     }
 
+    // Still need to return data onto the page
     echo $drinkInstructions;
 }
 
