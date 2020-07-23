@@ -135,7 +135,7 @@
                                             </a>
                                             <div class="support_text">
                                                 <h5>Harvesting</h5>
-                                                <p class="desc">In general, August, September, and October mark prime time for the annual grape harvest for most wineries in UK.</p>
+                                                <p class="desc">In general, August, September, and October mark prime time for the annual grape harvest for most wineries in US.</p>
                                             </div>
                                         </div>
                                     </div>
